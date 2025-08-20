@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sophie Rain - OnlyFans</title>
+    <title>Mayres Avelino - OnlyFans</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -49,9 +49,48 @@
         }
         
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 22px;
             font-weight: bold;
             color: #ffffff;
+        }
+        
+        .logo-img {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #00aff0;
+        }
+        
+        /* Banner de perfil */
+        .profile-banner {
+            height: 180px;
+            background: linear-gradient(45deg, #ff5c8d, #ff7a9d);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            overflow: hidden;
+        }
+        
+        .profile-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="rgba(0,0,0,0.1)"/><path d="M0 0L100 100" stroke="rgba(255,255,255,0.1)" stroke-width="2"/><path d="M100 0L0 100" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+            background-size: cover;
         }
         
         /* Profile Section */
@@ -59,30 +98,35 @@
             padding: 20px 15px;
             background: linear-gradient(to bottom, #ffffff, #f1f8ff);
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
         }
         
         .profile-header {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            margin-top: -40px; /* Sobrepor o banner */
+            position: relative;
+            z-index: 2;
         }
         
         .profile-avatar {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             background: linear-gradient(45deg, #00aff0, #0080ff);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 30px;
+            font-size: 35px;
             margin-right: 15px;
-            border: 3px solid #00aff0;
+            border: 4px solid #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
         .profile-info h1 {
-            font-size: 18px;
+            font-size: 20px;
             margin-bottom: 5px;
             color: #212529;
         }
@@ -394,17 +438,21 @@
         /* Responsividade adicional */
         @media (max-width: 480px) {
             .profile-avatar {
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
+                width: 70px;
+                height: 70px;
+                font-size: 30px;
             }
             
             .profile-info h1 {
-                font-size: 16px;
+                font-size: 18px;
             }
             
             .post-media {
                 height: 300px;
+            }
+            
+            .profile-banner {
+                height: 150px;
             }
         }
         
@@ -424,11 +472,19 @@
         <!-- Header -->
         <div class="header">
             <i class="fas fa-arrow-left"></i>
-            <div class="logo">OnlyFans</div>
+            <div class="logo">
+                <div class="logo-img">OF</div>
+                <span>OnlyFans</span>
+            </div>
             <div class="header-icons">
                 <i class="fas fa-search"></i>
                 <i class="fas fa-ellipsis-h"></i>
             </div>
+        </div>
+        
+        <!-- Banner de perfil -->
+        <div class="profile-banner">
+            Banner de Mayres Avelino
         </div>
         
         <!-- Profile Section -->
@@ -438,8 +494,8 @@
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="profile-info">
-                    <h1>Sophie Rain 🌟</h1>
-                    <p>@sophierain · Visto há 5 minutos</p>
+                    <h1>Mayres Avelino 🌟</h1>
+                    <p>@mayresavelino · Online agora</p>
                 </div>
             </div>
             
@@ -561,7 +617,7 @@
     <div class="modal" id="subscriptionModal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
-            <h2 class="modal-title">Assinar Sophie Rain</h2>
+            <h2 class="modal-title">Assinar Mayres Avelino</h2>
             <p class="modal-text">Desbloqueie conteúdo exclusivo por apenas $5 pelos primeiros 31 dias (50% de desconto)!</p>
             
             <div class="modal-buttons">
