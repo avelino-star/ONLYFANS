@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,6 @@
             padding: 0;
         }
         
-        /* Header - OnlyFans Colors */
         .header {
             background-color: #00aff0;
             padding: 15px;
@@ -71,7 +70,6 @@
             object-fit: contain;
         }
         
-        /* Profile banner */
         .profile-banner {
             height: 180px;
             background: #00aff0;
@@ -83,10 +81,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center bottom; /* Foca na parte inferior da imagem */
+            object-position: center bottom;
         }
         
-        /* Profile Section */
         .profile-section {
             padding: 20px 15px;
             background: linear-gradient(to bottom, #ffffff, #f1f8ff);
@@ -96,7 +93,7 @@
         
         .profile-header {
             display: flex;
-            align-items: flex-start; /* Alinha no topo */
+            align-items: flex-start;
             margin-bottom: 15px;
             margin-top: -30px;
             position: relative;
@@ -104,8 +101,8 @@
         }
         
         .profile-avatar {
-            width: 100px; /* Aumentado o tamanho da foto */
-            height: 100px; /* Aumentado o tamanho da foto */
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -125,16 +122,16 @@
         .profile-info {
             display: flex;
             flex-direction: column;
-            margin-top: 60px; /* Coloca o nome abaixo da foto */
+            margin-top: 60px;
         }
         
         .profile-info h1 {
             font-size: 20px;
             margin-bottom: 5px;
-            color: #000000; /* Cor preta conforme solicitado */
+            color: #000000;
             display: flex;
             align-items: center;
-            gap: 5px; /* Menos espaçamento entre nome e verificado */
+            gap: 5px;
         }
         
         .verified-badge {
@@ -176,7 +173,6 @@
             font-weight: 500;
         }
         
-        /* Subscription Banner */
         .subscription-banner {
             background: linear-gradient(to right, #00aff0, #0080ff);
             padding: 15px;
@@ -232,7 +228,6 @@
             color: #ffffff;
         }
         
-        /* Subscription Plans */
         .subscription-plans {
             padding: 15px;
             background-color: #ffffff;
@@ -282,7 +277,6 @@
             color: #6c757d;
         }
         
-        /* Posts Section */
         .posts-section {
             padding: 15px;
             background-color: #f8f9fa;
@@ -351,7 +345,6 @@
             font-size: 12px;
         }
         
-        /* Navigation */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -382,7 +375,6 @@
             margin-bottom: 5px;
         }
         
-        /* Subscription Modal */
         .modal {
             display: none;
             position: fixed;
@@ -456,7 +448,6 @@
             cursor: pointer;
         }
         
-        /* Additional responsiveness */
         @media (max-width: 480px) {
             .profile-avatar {
                 width: 90px;
@@ -472,7 +463,6 @@
             }
         }
         
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -481,28 +471,15 @@
         .profile-section, .subscription-banner, .subscription-plans, .post {
             animation: fadeIn 0.5s ease-out;
         }
-        
-        /* Loading states for images */
-        .img-loading {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-        
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <i class="fas fa-arrow-left"></i>
             <div class="logo">
                 <div class="logo-img">
-                    <img src="https://github.com/avelino-star/ONLYFANS/blob/main/IMG_2862.jpeg?raw=true" alt="OnlyFans Logo" onload="this.classList.remove('img-loading')" onerror="this.style.display='none'" class="img-loading">
+                    <img src="https://github.com/avelino-star/ONLYFANS/blob/main/IMG_2862.jpeg?raw=true" alt="OnlyFans Logo">
                 </div>
                 <span>OnlyFans</span>
             </div>
@@ -512,16 +489,14 @@
             </div>
         </div>
         
-        <!-- Profile banner -->
         <div class="profile-banner">
-            <img src="https://github.com/avelino-star/ONLYFANS/blob/main/0911D523-BA52-4F18-B37B-FE0D2AA68A51.jpeg?raw=true" alt="Mayres Avelino Banner" onload="this.classList.remove('img-loading')" onerror="this.style.display='none'" class="img-loading">
+            <img src="https://github.com/avelino-star/ONLYFANS/blob/main/0911D523-BA52-4F18-B37B-FE0D2AA68A51.jpeg?raw=true" alt="Mayres Avelino Banner">
         </div>
         
-        <!-- Profile Section -->
         <div class="profile-section">
             <div class="profile-header">
                 <div class="profile-avatar">
-                    <img src="https://github.com/avelino-star/ONLYFANS/blob/main/B7852DE7-D80D-429E-86E2-C3D6C1DB529B.jpeg?raw=true" alt="Mayres Avelino" onload="this.classList.remove('img-loading')" onerror="this.style.display='none'" class="img-loading">
+                    <img src="https://github.com/avelino-star/ONLYFANS/blob/main/B7852DE7-D80D-429E-86E2-C3D6C1DB529B.jpeg?raw=true" alt="Mayres Avelino">
                 </div>
                 <div class="profile-info">
                     <h1>Mayres Avelino <i class="fas fa-check-circle verified-badge"></i></h1>
@@ -537,7 +512,6 @@
             </div>
         </div>
         
-        <!-- Subscription Banner -->
         <div class="subscription-banner">
             <h2>SUBSCRIPTION</h2>
             <p>Limited offer: 50% discount for the first 31 days!</p>
@@ -546,7 +520,6 @@
             <button class="subscribe-button" id="subscribeBtn">SUBSCRIBE NOW</button>
         </div>
         
-        <!-- Subscription Plans -->
         <div class="subscription-plans">
             <h3>SUBSCRIPTION PLANS</h3>
             
@@ -575,7 +548,6 @@
             </div>
         </div>
         
-        <!-- Posts Section -->
         <div class="posts-section">
             <h2>SUBSCRIBE TO SEE THE POSTS</h2>
             
@@ -619,7 +591,6 @@
             </div>
         </div>
         
-        <!-- Bottom Navigation -->
         <div class="bottom-nav">
             <div class="nav-item active">
                 <i class="fas fa-home"></i>
@@ -644,7 +615,6 @@
         </div>
     </div>
     
-    <!-- Subscription Modal -->
     <div class="modal" id="subscriptionModal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
@@ -660,7 +630,6 @@
     </div>
 
     <script>
-        // Functionality for the subscribe button
         document.addEventListener('DOMContentLoaded', function() {
             const subscribeBtn = document.getElementById('subscribeBtn');
             const modal = document.getElementById('subscriptionModal');
@@ -679,32 +648,6 @@
                     modal.style.display = 'none';
                 }
             });
-            
-            // Simulate content loading when scrolling
-            window.addEventListener('scroll', function() {
-                const posts = document.querySelectorAll('.post');
-                const scrollPosition = window.scrollY + window.innerHeight;
-                
-                posts.forEach((post, index) => {
-                    if (scrollPosition > post.offsetTop + 100) {
-                        setTimeout(() => {
-                            post.style.opacity = 1;
-                        }, index * 200);
-                    }
-                });
-            });
-            
-            // Trigger initial scroll event to load visible posts
-            window.dispatchEvent(new Event('scroll'));
-            
-            // Add loading effect for images that don't load
-            setTimeout(() => {
-                document.querySelectorAll('.img-loading').forEach(img => {
-                    if (img.complete && img.naturalHeight !== 0) {
-                        img.classList.remove('img-loading');
-                    }
-                });
-            }, 3000);
         });
     </script>
 </body>
