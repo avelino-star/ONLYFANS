@@ -72,25 +72,15 @@
         /* Banner de perfil */
         .profile-banner {
             height: 180px;
-            background: linear-gradient(45deg, #ff5c8d, #ff7a9d);
+            background: #00aff0;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 16px;
             overflow: hidden;
         }
         
-        .profile-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .profile-banner img {
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="rgba(0,0,0,0.1)"/><path d="M0 0L100 100" stroke="rgba(255,255,255,0.1)" stroke-width="2"/><path d="M100 0L0 100" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
-            background-size: cover;
+            object-fit: cover;
         }
         
         /* Profile Section */
@@ -114,15 +104,19 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #00aff0, #0080ff);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 35px;
             margin-right: 15px;
             border: 4px solid #ffffff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .profile-info h1 {
@@ -134,6 +128,15 @@
         .profile-info p {
             color: #6c757d;
             font-size: 14px;
+        }
+        
+        .online-status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            margin-left: 5px;
         }
         
         .profile-bio {
@@ -286,11 +289,11 @@
         
         .post-media {
             height: 400px;
-            background: linear-gradient(45deg, #00aff0, #0080ff);
+            background: #e9ecef;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(255, 255, 255, 0.7);
+            color: #6c757d;
             font-size: 16px;
             position: relative;
         }
@@ -440,7 +443,6 @@
             .profile-avatar {
                 width: 70px;
                 height: 70px;
-                font-size: 30px;
             }
             
             .profile-info h1 {
@@ -465,6 +467,18 @@
         .profile-section, .subscription-banner, .subscription-plans, .post {
             animation: fadeIn 0.5s ease-out;
         }
+        
+        /* Loading states for images */
+        .img-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
     </style>
 </head>
 <body>
@@ -484,17 +498,17 @@
         
         <!-- Banner de perfil -->
         <div class="profile-banner">
-            Banner de Mayres Avelino
+            <img src="https://github.com/avelino-star/ONLYFANS/blob/main/0911D523-BA52-4F18-B37B-FE0D2AA68A51.jpeg?raw=true" alt="Banner de Mayres Avelino" onload="this.classList.remove('img-loading')" onerror="this.style.display='none'" class="img-loading">
         </div>
         
         <!-- Profile Section -->
         <div class="profile-section">
             <div class="profile-header">
                 <div class="profile-avatar">
-                    <i class="fas fa-user"></i>
+                    <img src="https://github.com/avelino-star/ONLYFANS/blob/main/B7852DE7-D80D-429E-86E2-C3D6C1DB529B.jpeg?raw=true" alt="Mayres Avelino" onload="this.classList.remove('img-loading')" onerror="this.style.display='none'" class="img-loading">
                 </div>
                 <div class="profile-info">
-                    <h1>Mayres Avelino 🌟</h1>
+                    <h1>Mayres Avelino 🌟 <span class="online-status"></span></h1>
                     <p>@mayresavelino · Online agora</p>
                 </div>
             </div>
@@ -665,6 +679,15 @@
             
             // Disparar evento de scroll inicial para carregar posts visíveis
             window.dispatchEvent(new Event('scroll'));
+            
+            // Adicionar efeito de loading para imagens que não carregarem
+            setTimeout(() => {
+                document.querySelectorAll('.img-loading').forEach(img => {
+                    if (img.complete && img.naturalHeight !== 0) {
+                        img.classList.remove('img-loading');
+                    }
+                });
+            }, 3000);
         });
     </script>
 </body>
