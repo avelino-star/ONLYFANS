@@ -73,7 +73,7 @@
         
         /* Profile banner */
         .profile-banner {
-            height: 180px;
+            height: 200px;
             background: #00aff0;
             position: relative;
             overflow: hidden;
@@ -83,6 +83,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center bottom; /* Foca na parte inferior da imagem */
         }
         
         /* Profile Section */
@@ -91,28 +92,30 @@
             background: linear-gradient(to bottom, #ffffff, #f1f8ff);
             border-bottom: 1px solid #e0e0e0;
             position: relative;
+            text-align: center; /* Centraliza o conteúdo */
         }
         
         .profile-header {
             display: flex;
+            flex-direction: column;
             align-items: center;
             margin-bottom: 15px;
-            margin-top: -30px; /* Adjusted to slightly overlap the banner */
+            margin-top: -50px; /* Ajustado para sobrepor mais o banner */
             position: relative;
             z-index: 2;
         }
         
         .profile-avatar {
-            width: 80px;
-            height: 80px;
+            width: 110px; /* Aumentado o tamanho da foto */
+            height: 110px; /* Aumentado o tamanho da foto */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
             border: 4px solid #ffffff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            margin-bottom: 15px; /* Espaço entre a foto e o nome */
         }
         
         .profile-avatar img {
@@ -121,15 +124,29 @@
             object-fit: cover;
         }
         
+        .profile-info {
+            text-align: center;
+        }
+        
         .profile-info h1 {
-            font-size: 20px;
+            font-size: 24px; /* Tamanho aumentado */
             margin-bottom: 5px;
-            color: #212529;
+            color: #000000; /* Cor preta conforme solicitado */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px; /* Menos espaçamento entre nome e verificado */
+        }
+        
+        .verified-badge {
+            color: #00aff0;
+            font-size: 20px;
         }
         
         .profile-info p {
             color: #6c757d;
-            font-size: 14px;
+            font-size: 16px; /* Tamanho aumentado */
+            margin-top: 5px;
         }
         
         .online-status {
@@ -443,12 +460,12 @@
         /* Additional responsiveness */
         @media (max-width: 480px) {
             .profile-avatar {
-                width: 70px;
-                height: 70px;
+                width: 100px;
+                height: 100px;
             }
             
             .profile-info h1 {
-                font-size: 18px;
+                font-size: 22px;
             }
             
             .post-media {
@@ -456,7 +473,7 @@
             }
             
             .profile-banner {
-                height: 150px;
+                height: 180px;
             }
         }
         
@@ -512,8 +529,9 @@
                     <img src="https://github.com/avelino-star/ONLYFANS/blob/main/B7852DE7-D80D-429E-86E2-C3D6C1DB529B.jpeg?raw=true" alt="Mayres Avelino" onload="this.classList.remove('img-loading')" onerror="this.style.display='none'" class="img-loading">
                 </div>
                 <div class="profile-info">
-                    <h1>Mayres Avelino 🌟 <span class="online-status"></span></h1>
-                    <p>@mayresavelino · Online now</p>
+                    <h1>Mayres Avelino <i class="fas fa-check-circle verified-badge"></i> <span class="online-status"></span></h1>
+                    <p>@mayresavelino</p>
+                    <p>Online now</p>
                 </div>
             </div>
             
