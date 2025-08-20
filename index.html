@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExclusiveContent - Plataforma de Conteúdo Premium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0f0f0f;
+            color: #f1f1f1;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff5c8d;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: #f1f1f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ff5c8d;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn-login {
+            background-color: transparent;
+            color: #f1f1f1;
+            border: 1px solid #555;
+        }
+        
+        .btn-signup {
+            background-color: #ff5c8d;
+            color: white;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23222"/><path d="M0 0L100 100" stroke="%23333" stroke-width="2"/><path d="M100 0L0 100" stroke="%23333" stroke-width="2"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #ccc;
+        }
+        
+        .btn-primary {
+            background-color: #ff5c8d;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+        }
+        
+        /* Creators Section */
+        .creators {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #fff;
+        }
+        
+        .creators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .creator-card {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .creator-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .creator-img {
+            height: 200px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 20px;
+        }
+        
+        .creator-info {
+            padding: 15px;
+        }
+        
+        .creator-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .creator-stats {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 14px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: #1a1a1a;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            background-color: #252525;
+            border-radius: 8px;
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #ff5c8d;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background-color: #111;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #ff5c8d;
+        }
+        
+        .copyright {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .features-grid, .creators-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">ExclusiveContent</div>
+                <nav class="nav-links">
+                    <a href="#">Descobrir</a>
+                    <a href="#">Criadores</a>
+                    <a href="#">Preços</a>
+                    <a href="#">Sobre</a>
+                </nav>
+                <div class="auth-buttons">
+                    <button class="btn btn-login">Entrar</button>
+                    <button class="btn btn-signup">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Conecte-se com seus criadores favoritos</h1>
+            <p>Acesse conteúdo exclusivo, interaja diretamente e apoie o trabalho de criadores independentes em nossa plataforma segura.</p>
+            <button class="btn btn-primary">Comece agora gratuitamente</button>
+        </div>
+    </section>
+
+    <!-- Creators Section -->
+    <section class="creators">
+        <div class="container">
+            <h2 class="section-title">Criadores em Destaque</h2>
+            <div class="creators-grid">
+                <div class="creator-card">
+                    <div class="creator-img">Foto do Perfil</div>
+                    <div class="creator-info">
+                        <h3 class="creator-name">Ana Silva</h3>
+                        <p>Fotógrafa profissional</p>
+                        <div class="creator-stats">
+                            <span>1.2k fãs</span>
+                            <span>245 posts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <div class="creator-img">Foto do Perfil</div>
+                    <div class="creator-info">
+                        <h3 class="creator-name">Carlos Oliveira</h3>
+                        <p>Instrutor de fitness</p>
+                        <div class="creator-stats">
+                            <span>3.4k fãs</span>
+                            <span>512 posts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <div class="creator-img">Foto do Perfil</div>
+                    <div class="creator-info">
+                        <h3 class="creator-name">Marina Costa</h3>
+                        <p>Artista digital</p>
+                        <div class="creator-stats">
+                            <span>2.1k fãs</span>
+                            <span>387 posts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="creator-card">
+                    <div class="creator-img">Foto do Perfil</div>
+                    <div class="creator-info">
+                        <h3 class="creator-name">João Santos</h3>
+                        <p>Chef de cozinha</p>
+                        <div class="creator-stats">
+                            <span>4.7k fãs</span>
+                            <span>621 posts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Por que escolher nossa plataforma?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Conteúdo Exclusivo</h3>
+                    <p>Acesse material que você não encontrará em nenhum outro lugar, criado especialmente para os assinantes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Interação Direta</h3>
+                    <p>Converse diretamente com os criadores, faça perguntas e receba respostas personalizadas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3 class="feature-title">Pagamento Seguro</h3>
+                    <p>Processamos todos os pagamentos com criptografia de ponta para garantir sua segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Ajuda</a>
+                <a href="#">Contato</a>
+            </div>
+            <p class="copyright">© 2023 ExclusiveContent. Esta é uma página demonstrativa para fins educacionais.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidade básica para os botões
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.classList.contains('btn-signup') || this.classList.contains('btn-primary')) {
+                        alert('Esta é uma demonstração. Em um site real, este botão levaria para uma página de cadastro.');
+                    } else if (this.classList.contains('btn-login')) {
+                        alert('Esta é uma demonstração. Em um site real, este botão levaria para uma página de login.');
+                    }
+                });
+            });
+            
+            // Efeito de hover nos cards de criadores
+            const creatorCards = document.querySelectorAll('.creator-card');
+            
+            creatorCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
