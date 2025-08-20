@@ -251,6 +251,7 @@
             justify-content: space-between;
             padding: 12px 0;
             border-bottom: 1px solid #e0e0e0;
+            align-items: center;
         }
         
         .plan:last-child {
@@ -264,8 +265,26 @@
         .plan-price {
             flex: 1;
             text-align: right;
+        }
+        
+        .plan-price-button {
+            background: linear-gradient(to right, #00aff0, #0080ff);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
             font-weight: bold;
-            color: #00aff0;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+        
+        .plan-price-button:hover {
+            background: linear-gradient(to right, #0080ff, #00aff0);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .plan-title {
@@ -368,7 +387,7 @@
             font-size: 12px;
         }
         
-        .nav-item.active {
+        .nav-item active {
             color: #00aff0;
         }
         
@@ -471,6 +490,11 @@
             .profile-info {
                 margin-top: 35px; /* Ajuste para mobile */
             }
+            
+            .plan-price-button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
         }
         
         @keyframes fadeIn {
@@ -537,7 +561,9 @@
                     <div class="plan-title">3 MONTHS (15% off)</div>
                     <div class="plan-stats">225 POSTS · 341 MEDIA</div>
                 </div>
-                <div class="plan-price">$25.50</div>
+                <div class="plan-price">
+                    <a href="https://checkout.stripe.com/c/pay/cs_live_a1uJQQHCarLvgRk6sOGTKmMVVuc2bh2SYKFlqUM37yfff3kYJvWT9P0Zf9#fidkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl" class="plan-price-button">$25.50</a>
+                </div>
             </div>
             
             <div class="plan">
@@ -545,7 +571,9 @@
                     <div class="plan-title">6 MONTHS (30% off)</div>
                     <div class="plan-stats">450 POSTS · 682 MEDIA</div>
                 </div>
-                <div class="plan-price">$42.00</div>
+                <div class="plan-price">
+                    <a href="https://checkout.stripe.com/c/pay/cs_live_a1X0cEGBkktfmm2ARk6CfuICP879jx9z1Di6mFJU2ByHPdoIQqOrKiSyUY#fidkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl" class="plan-price-button">$42.00</a>
+                </div>
             </div>
             
             <div class="plan">
@@ -553,7 +581,9 @@
                     <div class="plan-title">12 MONTHS (50% off)</div>
                     <div class="plan-stats">900 POSTS · 1364 MEDIA</div>
                 </div>
-                <div class="plan-price">$60.00</div>
+                <div class="plan-price">
+                    <a href="https://checkout.stripe.com/c/pay/cs_live_a1GFcH4cXzPIP5V7iUF3tLdIC0OmaWs6CRIphOasqOkj20MWYbF25w3Cfq#fidkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl" class="plan-price-button">$60.00</a>
+                </div>
             </div>
         </div>
         
@@ -631,7 +661,7 @@
             <p class="modal-text">Unlock exclusive content for only $5 for the first 31 days (50% discount)!</p>
             
             <div class="modal-buttons">
-                <button class="modal-button primary">Subscribe with Card</button>
+                <a href="https://checkout.stripe.com/c/pay/cs_live_a1xvN8nTuBLmycOzcb741q2TTSUqBS4fgf1BTPF8pIRJ5fYjF9Ct3TXZQk#fidkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl" class="modal-button primary">Subscribe with Card</a>
                 <button class="modal-button secondary">Subscribe with PayPal</button>
                 <button class="modal-button secondary">Other Methods</button>
             </div>
